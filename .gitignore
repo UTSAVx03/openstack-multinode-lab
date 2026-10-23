@@ -1,0 +1,22 @@
+# Secrets and machine-specific OpenStack credentials
+.env
+.env.*
+admin-openrc
+*-openrc
+clouds.yaml
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Raw logs, terminal dumps and local databases
+*.log
+*.log.*
+*.sqlite
+*.db
+
+# Local editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,10 @@
+# Curated extract: Cinder test-volume
+# The values below are based on the captured OpenStack CLI output.
+
+name        test-volume
+size        5 (as displayed by OpenStack; nominally 5 GiB)
+status      in-use
+attached to test-vm-compute2
+requested attachment device shown by the API: /dev/vdb
+
+The storage node used an 80 GB /dev/sdb disk as an LVM physical volume in volume group `cinder-volumes`, with a thin pool named `cinder-volumes-pool`. The storage node exposed the volume through TGT/iSCSI. In a separate compute-host context, Linux enumerated the attached iSCSI disk as /dev/sdb. Device names should always be checked in the specific API, host and guest context.

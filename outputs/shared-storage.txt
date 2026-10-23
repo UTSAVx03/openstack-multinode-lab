@@ -1,0 +1,9 @@
+# Curated extract: shared NFS instance path
+# Captured on Compute1 and Compute2.
+
+NFS source:   172.18.84.33:/srv/nova-shared/instances
+Mount path:   /srv/nova-shared/instances
+Filesystem:   approximately 47G total
+Captured use: approximately 8.6G used, 36G available, 20% used
+
+Both compute nodes reported /srv/nova-shared/instances as a mount point. A file named `migration-test` created on one compute node was visible through the shared mount on the other node.

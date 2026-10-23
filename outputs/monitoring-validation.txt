@@ -1,0 +1,15 @@
+# Curated extract: monitoring validation
+# Captured checks, not a live status report.
+
+Prometheus service: active
+Prometheus readiness endpoint: "Prometheus is Ready."
+Node Exporter endpoint checks:
+  controller 172.18.84.22:9100  OK
+  compute1   172.18.84.23:9100  OK
+  compute2   172.18.84.32:9100  OK
+  storage    172.18.84.33:9100  OK
+Grafana service: active
+Grafana /api/health: database ok (captured response)
+Grafana Prometheus data source: "Successfully queried the Prometheus API."
+
+The dashboard screenshot shows panels for node health, CPU usage, memory usage, disk usage, network receive and network transmit.

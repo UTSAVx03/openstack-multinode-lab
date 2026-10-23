@@ -1,0 +1,20 @@
+# Curated extract: successful cold migration
+# Captured result, not a live query.
+
+Command used for the successful standard migration workflow:
+
+openstack --os-compute-api-version 2.56 server migrate \
+  --host compute2 --wait migration-test-vm
+
+Result: Complete
+
+After migration confirmation, the captured `openstack server show` fields were:
+
+OS-EXT-SRV-ATTR:host                  compute2
+OS-EXT-SRV-ATTR:hypervisor_hostname   compute2
+name                                  migration-test-vm
+status                                ACTIVE
+
+The migration history showed the source compute `compute1`, destination compute `compute2`, destination host `172.18.84.32`, and status `confirmed`.
+
+Important: this is evidence of a successful cold migration workflow. The separate live-migration attempts using `--live-migration` failed with Nova MigrationError_Remote HTTP 500 and remain unresolved.

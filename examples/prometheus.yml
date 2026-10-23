@@ -1,0 +1,27 @@
+# Example scrape configuration based on the lab's captured monitoring setup.
+# Replace the RFC1918 lab targets for your own network before use.
+# No credentials or proxy settings belong in this file.
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["127.0.0.1:9090"]
+
+  - job_name: node_exporter
+    static_configs:
+      - targets: ["172.18.84.22:9100"]
+        labels:
+          node: controller
+      - targets: ["172.18.84.23:9100"]
+        labels:
+          node: compute1
+      - targets: ["172.18.84.32:9100"]
+        labels:
+          node: compute2
+      - targets: ["172.18.84.33:9100"]
+        labels:
+          node: storage
